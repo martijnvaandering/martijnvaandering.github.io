@@ -1,0 +1,131 @@
+<html>
+
+<head>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://code.highcharts.com/highcharts-3d.js"></script>
+  <script src="https://code.highcharts.com/modules/exporting.js"></script>
+  <script src="https://code.highcharts.com/modules/export-data.js"></script>
+  <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+  <style>
+    html {
+      background-color: #44546A;
+    }
+
+    svg {
+      background-color: #44546A;
+    }
+
+    #container {
+      height: 400px;
+      background-color: #44546A;
+    }
+
+    .highcharts-figure,
+    .highcharts-data-table table {
+      background-color: #44546A;
+      min-width: 310px;
+      max-width: 800px;
+      margin: 1em auto;
+    }
+
+    .highcharts-data-table table {
+      background-color: #44546A;
+      font-family: Verdana, sans-serif;
+      border-collapse: collapse;
+      border: 1px solid #ebebeb;
+      margin: 10px auto;
+      text-align: center;
+      width: 100%;
+      max-width: 500px;
+    }
+
+    .highcharts-data-table caption {
+      background-color: #44546A;
+      padding: 1em 0;
+      font-size: 1.2em;
+      color: #555;
+    }
+
+    .highcharts-data-table th {
+      font-weight: 600;
+      padding: 0.5em;
+    }
+
+    .highcharts-data-table td,
+    .highcharts-data-table th,
+    .highcharts-data-table caption {
+      padding: 0.5em;
+    }
+
+    .highcharts-data-table thead tr,
+    .highcharts-data-table tr:nth-child(even) {
+      background: #f8f8f8;
+    }
+
+    .highcharts-data-table tr:hover {
+      background: #f1f7ff;
+    }
+
+    .highcharts-description {
+      margin: 0.3rem 10px;
+      background-color: #44546A;
+    }
+  </style>
+</head>
+
+<body>
+
+  <figure class="highcharts-figure">
+    <div id="container"></div>
+  </figure>
+
+  <SCRipt>
+    // Data retrieved from https://olympics.com/en/olympic-games/beijing-2022/medals
+    Highcharts.chart("container", {
+      chart: {
+        backgroundColor: "#44546A",
+        type: "pie",
+        options3d: {
+          enabled: true,
+          alpha: 45
+        }
+      },
+      title: {
+        text: "Azure Costs",
+        style: {
+          color: "white"
+        }
+      },
+      plotOptions: {
+        pie: {
+          innerSize: 100,
+          depth: 45
+        }
+      },
+      series: [
+        {
+          name: "&euro;",
+          data: [
+            ["Azure SQL Database", 14],
+            ["Storage Accounts", 15],
+            ["Logic Apps", 18],
+            ["API Management", 140],
+            ["App Service", 25],
+            ["Azure Container Instances", 36.70],
+            ["Application Gateway",0],
+            ["VPN Gateway", 24.04],
+            ["Service Bus", 9],
+            ["Key Vault", 0],
+            ["Azure Monitor", 77.04],
+            ["Azure Container Registry", 96.35]
+          ]
+        }
+      ]
+    });
+
+  </SCRipt>
+
+</body>
+
+</html>
